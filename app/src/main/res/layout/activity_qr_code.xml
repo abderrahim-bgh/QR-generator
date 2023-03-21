@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bk"
+    tools:context=".qrCode">
+
+    <ImageView
+        android:layout_marginTop="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:layout_gravity="left"
+        android:layout_marginRight="130dp"
+        android:src="@drawable/logoo"
+        android:textColor="#000"
+        />
+    <ImageView
+        android:id="@+id/imageCode"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="version 1.0 by UMSM"
+        android:gravity="right"
+        android:layout_gravity="right"/>
+</LinearLayout>
