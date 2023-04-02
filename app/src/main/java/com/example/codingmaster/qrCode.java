@@ -1,11 +1,15 @@
 package com.example.codingmaster;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,11 +22,19 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class qrCode extends AppCompatActivity {
 
+    AppCompatButton sscanner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code);
         ImageView imageCode=findViewById(R.id.imageCode);
+        sscanner = findViewById(R.id.scanner);
+        sscanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(qrCode.this, scannedBarcode.class));
+            }
+        });
 
         // for get data for the edit text
         Intent intent = getIntent();
