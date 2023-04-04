@@ -30,7 +30,7 @@ public class scannedBarcode extends AppCompatActivity {
     private static final int REQUEST_CAMERA_PERMISSION = 201;
     Button btnAction;
     String intentData = "";
-    boolean isEmail = false;
+    boolean istxt = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +46,7 @@ public class scannedBarcode extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (intentData.length() > 0) {
-                    if (isEmail) {
+                    if (istxt) {
                         Toast.makeText(scannedBarcode.this, intentData, Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(scannedBarcode.this, qrCode.class).putExtra("result", intentData));
                     }
@@ -115,10 +115,10 @@ public class scannedBarcode extends AppCompatActivity {
                                 txtBarcodeValue.removeCallbacks(null);
                                 intentData = barcodes.valueAt(0).email.address;
                                 txtBarcodeValue.setText(intentData);
-                                isEmail = true;
-                                btnAction.setText("ADD CONTENT TO THE MAIL");
+                                istxt = true;
+                                btnAction.setText("ADD CONTENT");
                             } else {
-                                isEmail = false;
+                                istxt = false;
                                 btnAction.setText("LAUNCH URL");
                                 intentData = barcodes.valueAt(0).displayValue;
                                 txtBarcodeValue.setText(intentData);

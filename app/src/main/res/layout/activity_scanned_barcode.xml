@@ -37,5 +37,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="ADD CONTENT IN THE MAIL" />
+        android:text="ADD CONTENT or view web site" />
 </RelativeLayout>
